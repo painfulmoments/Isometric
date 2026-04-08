@@ -4,6 +4,10 @@
 
 ![Isometric Dash Home](docs/images/hero-home.png)
 
+## 下载试玩
+
+- Windows 可执行版本：[IsometricDash-Windows.zip](https://github.com/painfulmoments/Isometric/releases/latest/download/IsometricDash-Windows.zip)
+
 ## 项目概览
 
 - 项目全称：`Isometric Dash`
