@@ -399,3 +399,8 @@ restartButton.onClick.AddListener(RestartGame);
 它现在最适合被理解为：
 
 “一个已经能玩、也保留了康复系统扩展能力的 Unity 3D 康复跑酷原型工程。”
+
+## 15. 致谢
+
+- 美术特别感谢：韩雨禾
+- 建模特别感谢：鞠一鸣
