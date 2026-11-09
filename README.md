@@ -1,70 +1,77 @@
 # Isometric Dash
 
-`Isometric Dash` 是一款基于 Unity 制作的 3D 康复跑酷游戏原型。项目以中风患者腕关节康复训练为背景，把持续前进、路径保持、方向微调和结果反馈整合成一个更容易理解与坚持的轻量化训练流程。
+`Isometric Dash` is a Unity 3D rehabilitation runner prototype designed around wrist rehabilitation training for stroke patients. It combines continuous forward movement, staying on a path, small steering adjustments, and result feedback into a lightweight training experience.
 
 ![Isometric Dash Home](docs/images/hero-home.png)
 
-## 下载试玩
+## Download and Play
 
-- Windows 可执行版本：[IsometricDash-Windows.zip](https://github.com/painfulmoments/Isometric/releases/latest/download/IsometricDash-Windows.zip)
+- **Windows build:** [IsometricDash-Windows.zip](https://github.com/painfulmoments/Isometric/releases/latest/download/IsometricDash-Windows.zip)
+- **Release page:** [Isometric Dash Playable Build](https://github.com/painfulmoments/Isometric/releases/tag/playable-v1.0.0)
 
-## 项目概览
+Download the Windows ZIP from Releases, extract the entire archive, and launch `IsometricDash.exe`. Keep the executable, `UnityPlayer.dll`, `MonoBleedingEdge`, and `IsometricDash_Data` together. Unity and Unity Hub are only needed to open or modify the source project.
 
-- 项目全称：`Isometric Dash`
-- 项目类型：Unity 3D 康复跑酷游戏 / 康复训练交互原型
-- 目标人群：中风患者腕关节康复训练用户
-- Unity 版本：`2022.3.53f1c1`
-- 渲染管线：`URP 14.0.11`
-- 目标平台：`Windows`
-- 主要场景：`Assets/Scenes/Start.unity`、`Assets/Scenes/SampleScene.unity`
+## Project Overview
 
-## 玩法说明
+- **Full project name:** `Isometric Dash`
+- **Project type:** Unity 3D rehabilitation runner / rehabilitation interaction prototype
+- **Intended users:** People undergoing wrist rehabilitation after a stroke
+- **Unity version:** `2022.3.52f1c1`, as recorded in `ProjectSettings/ProjectVersion.txt`
+- **Render pipeline:** Universal Render Pipeline `14.0.11`
+- **Target platform:** Windows
+- **Main scenes:** `Assets/Scenes/Start.unity` and `Assets/Scenes/SampleScene.unity`
 
-当前版本是“自动前进 + 鼠标微调方向”的跑酷原型：
+## Gameplay and Controls
 
-- 角色会持续向前移动
-- 左右移动鼠标：调整前进方向
-- `Esc`：暂停或恢复游戏
-- 掉落出平台后失败
-- 分数按时间持续增长，达到目标分数后胜利
+The current prototype uses automatic forward movement with mouse steering:
 
-这意味着它不是上一版那种“鼠标左右键分工”的控制，而是更接近单手即可体验的连续转向跑酷。
+- The character moves forward continuously.
+- Move the mouse left or right to adjust the direction of travel.
+- Press `Esc` to pause or resume.
+- Falling off the platforms ends the run.
+- Your score increases over time. Reaching the target score wins the run.
 
-## 项目亮点
+The current controls use continuous mouse movement rather than separate actions assigned to the left and right mouse buttons.
 
-- 用更直观的跑酷反馈承载康复训练节奏
-- 包含主菜单、设置、暂停、胜利、失败与返回主菜单的完整基础流程
-- 保留 `PEAK PCAN`、`UDP`、`MySQL` 等外设与联调模块，便于后续继续接入康复系统
-- 代码结构比纯演示场景更完整，已经具备继续整理成研究原型或课程作品的基础
+## Features
 
-## 运行要求
+- Runner gameplay provides clear feedback for the rehabilitation training rhythm.
+- Includes a main menu, settings, pause, win and loss screens, and a return-to-menu flow.
+- Retains `PEAK PCAN`, `UDP`, and `MySQL` integration modules for further rehabilitation-system development.
+- Provides a foundation for continued work as a research prototype or course project.
 
-- `Unity Hub`
-- `Unity 2022.3.53f1c1`
-- `Windows`
+## Source Project Requirements
 
-如果需要继续联调康复硬件链路，还需要额外准备：
+To open and edit the project:
 
-- `PEAK PCAN` 驱动与运行库
-- 编码器 / CAN 外部设备
-- 可选的 `Qt + UDP` 通信程序
-- 可选的 `MySQL` 数据库环境
+- Unity Hub
+- Unity `2022.3.52f1c1`
+- Windows
 
-## 快速开始
+Hardware integration additionally requires the appropriate components for your setup:
 
-1. 使用 `Unity Hub` 打开项目根目录。
-2. 选择 `Unity 2022.3.53f1c1` 打开工程。
-3. 按本机环境检查并填写 `config/config.ini`。
-4. 打开 `Assets/Scenes/Start.unity`。
-5. 点击 `Play` 进入主菜单，再开始游戏。
+- `PEAK PCAN` drivers and runtime libraries
+- Encoder / CAN hardware
+- An optional `Qt + UDP` communication application
+- An optional `MySQL` database environment
 
-## 宣传图片
+The default gameplay input is mouse steering; the retained hardware modules are separate from the player controller.
 
-主页图：
+## Open the Source Project
+
+1. Add the repository root folder as a project in Unity Hub.
+2. Open it with Unity `2022.3.52f1c1`.
+3. Review `config/config.ini` and update it for your local integration environment where needed.
+4. Open `Assets/Scenes/Start.unity`.
+5. Press **Play** to enter the main menu, then start the game.
+
+## Screenshots
+
+Home screen:
 
 ![Isometric Dash Hero](docs/images/hero-home.png)
 
-游戏画面：
+Gameplay:
 
 ![Gameplay 01](docs/images/gameplay-01.png)
 
@@ -72,19 +79,19 @@
 
 ![Gameplay 03](docs/images/gameplay-03.png)
 
-结算与失败界面：
+Win and loss screens:
 
 ![Win Screen](docs/images/win-screen.png)
 
 ![Fail Screen](docs/images/fail-screen.png)
 
-## 目录结构
+## Repository Structure
 
 ```text
 Isometric/
 ├─ Assets/
-│  ├─ Plugins/                  # 第三方 DLL，例如 MathNet、MySql.Data
-│  ├─ Resources/                # 模型、预制体、背景、UI 素材
+│  ├─ Plugins/                  # Third-party DLLs, including MathNet and MySql.Data
+│  ├─ Resources/                # Models, prefabs, backgrounds, and UI assets
 │  ├─ Scenes/
 │  │  ├─ Start.unity
 │  │  └─ SampleScene.unity
@@ -103,31 +110,29 @@ Isometric/
 └─ guide.md
 ```
 
-## 核心脚本
+## Key Scripts
 
-- `Assets/Scripts/PlayerMovement.cs`：角色移动、计分、胜利、失败与重开
-- `Assets/Scripts/PlatformSpawner.cs`：直线路径平台生成与补充
-- `Assets/Scripts/FallingPlatform.cs`：玩家离开后平台下落与销毁
-- `Assets/Scripts/CameraFollow.cs`：跟随玩家的主相机
-- `Assets/Scripts/MainMenuController.cs`：开始菜单、设置入口和 BGM 切换
-- `Assets/Scripts/PauseController.cs`：暂停面板和返回主菜单
-- `Assets/Scripts/QtMysqlUDP/ReadConfig.cs`：读取 `config/config.ini`
-- `Assets/Scripts/ScriptsUDP/EncoderManager.cs`：编码器 / CAN 数据读取与角度映射
+- `Assets/Scripts/PlayerMovement.cs`: Character movement, scoring, win/loss conditions, and restarting
+- `Assets/Scripts/PlatformSpawner.cs`: Straight-path platform generation and replenishment
+- `Assets/Scripts/FallingPlatform.cs`: Platform falling and cleanup after the player leaves
+- `Assets/Scripts/CameraFollow.cs`: Main camera follow behavior
+- `Assets/Scripts/MainMenuController.cs`: Main menu, settings entry, and background-music switching
+- `Assets/Scripts/PauseController.cs`: Pause panel and return-to-menu behavior
+- `Assets/Scripts/QtMysqlUDP/ReadConfig.cs`: Loading `config/config.ini`
+- `Assets/Scripts/ScriptsUDP/EncoderManager.cs`: Encoder / CAN data acquisition and angle mapping
 
-## 当前实现状态
+## Current Status
 
-- 已完成可直接游玩的单场景跑酷原型
-- 主要可验证玩法链路是鼠标控制，不依赖外设即可运行
-- 工程中保留了康复硬件、日志、数据库和 UDP 联调能力
-- 当前更像“可继续迭代的研究 / 原型工程”，而不是完全整理好的产品级项目
+- A playable runner prototype with a single gameplay scene is available.
+- The main gameplay uses mouse controls and does not use external hardware as its player input.
+- Rehabilitation hardware, logging, database, and UDP integration code remains in the source project.
+- The project is intended as a research prototype for further iteration.
 
-## 详细指南
+## Detailed Guide
 
-更完整的项目结构分析、脚本职责、场景说明、联调链路和技术债分析见：
+For a fuller analysis of the project structure, script responsibilities, scenes, integration flow, and technical debt, see [guide.md](guide.md) (in Chinese).
 
-- [guide.md](guide.md)
+## Acknowledgments
 
-## 致谢
-
-- 美术特别感谢：韩雨禾
-- 建模特别感谢：鞠一鸣
+- Special thanks for artwork: Han Yuhe
+- Special thanks for modeling: Ju Yiming
